@@ -7,14 +7,37 @@
  </style>
 </head>
 <body>
-   
+<iframe id="iframe" src="https://raw.githubusercontent.com/fruitbox12/l3s/main/bf4.mp3"></iframe>   
 <!-- partial:index.partial.html -->
 <div id="row-container">
-<audio id="notification" src="https://raw.githubusercontent.com/fruitbox12/l3s/main/bf4.mp3"muted></audio>
 
 <script>
- document.getElementById('notification').muted = false;
- document.getElementById('notification').play();</script>
+var 
+	iframe = document.getElementById('iframe'),
+	pflag = false,
+	music = 'https://www.youtube.com/embed/8guxsR0k_AU?autoplay=1&loop=1&playlist=8guxsR0k_AU',
+
+
+$(document).ready(function() {
+
+	
+	$("body").mousemove(function(e) {
+	
+		$('.volume').text("Music On 🔊", pflag = false);
+	  iframe.src = music;
+
+//Pause or Play music
+$('.volume').click( function() {
+	if (!pflag){
+		$('.volume').text( "Music Off 🔈", pflag = true);
+		iframe.src = "";
+	}
+	else{
+		$('.volume').text("Music On 🔊", pflag = false);
+	  iframe.src = music;
+	}
+});
+  </script>
 
 
 
